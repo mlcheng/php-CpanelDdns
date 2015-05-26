@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"http",
+				"httpRequest"
+			],
+			[
 				"CURLOPT_SS",
 				"CURLOPT_SSL_VERIFYPEER"
 			],
@@ -59,7 +63,32 @@
 			"file": "cip.php",
 			"settings":
 			{
-				"buffer_size": 3476,
+				"buffer_size": 1211,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "ddns.php",
+			"settings":
+			{
+				"buffer_size": 4717,
+				"line_ending": "Windows",
+				"name": "ddns.php"
+			}
+		},
+		{
+			"file": "credentials.php",
+			"settings":
+			{
+				"buffer_size": 215,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 15,
 				"line_ending": "Windows"
 			}
 		}
@@ -98,12 +127,19 @@
 	},
 	"expanded_folders":
 	[
-		"/C/AppServ/www/dns"
+		"/C/AppServ/www/ddns"
 	],
 	"file_history":
 	[
-		"/C/AppServ/www/ddns/functions.php",
-		"/C/AppServ/www/ddns/changeip.php",
+		"/C/Users/Michael/.gitconfig",
+		"/C/AppServ/www/ddns/test.php",
+		"/C/AppServ/www/dns/credentials.php",
+		"/C/AppServ/www/dns/cip.php",
+		"/C/AppServ/www/dns/test.php",
+		"/C/AppServ/www/dns/.gitignore",
+		"/D/.appserv/.ng/.ng/.ng/Shared with Victoria/a.html",
+		"/C/AppServ/www/dns/functions.php",
+		"/C/AppServ/www/dns/changeip.php",
 		"/C/AppServ/www/dns/update.php",
 		"/C/AppServ/www/win/index.php",
 		"/C/AppServ/www/minimal/index.php",
@@ -152,7 +188,7 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -166,6 +202,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"$request->",
+			"_URL",
+			"_url",
+			"$",
+			"var",
+			"ddns_",
+			"this",
+			"var",
+			"$inf['url']",
+			"url",
+			"request",
+			"get()",
 			"login",
 			"ch",
 			"#name ",
@@ -215,11 +263,6 @@
 	"groups":
 	[
 		{
-			"sheets":
-			[
-			]
-		},
-		{
 			"selected": 0,
 			"sheets":
 			[
@@ -229,116 +272,118 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3476,
+						"buffer_size": 1211,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								324,
+								324
 							]
 						],
 						"settings":
 						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 2,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "simple",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 96.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "ddns.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4717,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3330,
+								3330
+							]
+						],
+						"settings":
+						{
+							"auto_name": "ddns.php",
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "credentials.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 215,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								122,
+								122
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15,
+								15
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -391,7 +436,7 @@
 		"height": 0.0
 	},
 	"pinned_build_system": "",
-	"project": "ddns.sublime-project",
+	"project": "/C/AppServ/www/dns/dns.sublime-project",
 	"replace":
 	{
 		"height": 0.0
