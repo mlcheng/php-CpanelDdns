@@ -25,7 +25,7 @@ Finally, just update the ddns
 
 	$cpanel->updateDdns("yourdomain.com", "vnc.yourdomain.com");
 
-You should specify your domain, and the subdomain you want to use to connect back home (or wherever).
+You should specify your domain, and the subdomain you want to use to connect back home (or wherever). Now you can use `vnc.yourdomain.com` to connect to your VNC server! Or whatever you want.
 
 ### Will this 100% work?
 I am not sure if this will work on *all* cPanels because of one small thing. There's a parameter in the jsonapi that specifies `line=xx`. I'm not sure if this affects anything, but if this library doesn't work for you, try to change the `line` to something else. This can be found in the `$param` variable in of the `updateDdns()` function.
