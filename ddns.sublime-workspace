@@ -1,0 +1,440 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"CURLOPT_SS",
+				"CURLOPT_SSL_VERIFYPEER"
+			],
+			[
+				"docume",
+				"document"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"orig",
+				"orig_opacity"
+			],
+			[
+				"pa",
+				"pageYOffset"
+			],
+			[
+				"document",
+				"documentElement"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"scr",
+				"scrollTimeout"
+			],
+			[
+				"acc",
+				"access_token"
+			],
+			[
+				"scrollto",
+				"scroll_to_bottom"
+			],
+			[
+				"lo",
+				"login_url"
+			],
+			[
+				"req",
+				"request"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "cip.php",
+			"settings":
+			{
+				"buffer_size": 3476,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 424.0
+	},
+	"console":
+	{
+		"height": 129.0,
+		"history":
+		[
+			"import urllib.request,os; pr='Preferences.sublime-settings'; ip='ignored_packages'; n='Package Control'; s=sublime.load_settings(pr); ig=s.get(ip); ig.append(n); s.set(ip,ig); sublime.save_settings('Preferences.sublime-settings'); pf=n+'.sublime-package'; urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); by=urllib.request.urlopen('https://packagecontrol.io/'+pf.replace(' ','%20')).read(); open(os.path.join(sublime.installed_packages_path(),pf),'wb').write(by); ig.remove(n); s.set(ip,ig); sublime.save_settings(pr); print('Package Control: 3.0.0 upgrade successful!')",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/AppServ/www/dns"
+	],
+	"file_history":
+	[
+		"/C/AppServ/www/ddns/functions.php",
+		"/C/AppServ/www/ddns/changeip.php",
+		"/C/AppServ/www/dns/update.php",
+		"/C/AppServ/www/win/index.php",
+		"/C/AppServ/www/minimal/index.php",
+		"/C/AppServ/www/rnd.php",
+		"/C/Users/Michael/Temp/rnd.c",
+		"/C/AppServ/www/ddns/index.php",
+		"/C/AppServ/www/findme/functions.php",
+		"/C/AppServ/www/findme/class.php",
+		"/C/AppServ/www/findme/chat.php",
+		"/C/AppServ/www/findme/assets/mobile/db.php",
+		"/C/Users/Michael/AppData/Roaming/Sublime Text 2/Packages/Build/C.sublime-build",
+		"/C/Users/Michael/AppData/Roaming/Sublime Text 2/Packages/C++/C++.sublime-build",
+		"/C/Users/Michael/AppData/Roaming/Sublime Text 2/Packages/C++/C++.sublime-settings",
+		"/C/Users/Michael/Programming/C/2013-11-06 Hello World/hello.exe",
+		"/C/Users/Michael/Programming/C/2013-11-06 Hello World/hello.c",
+		"/C/Users/Michael/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Michael/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Michael/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/C/AppServ/www/bitesize/assets/ml.old.js",
+		"/C/AppServ/www/findme/2013.07.28.v2.php",
+		"/C/Users/Michael/Applications/Android ADT Bundle/sdk/extras/google/google_play_services/samples/maps/src/com/example/mapdemo/MyLocationDemoActivity.java",
+		"/C/AppServ/www/michael/assets/misc.js",
+		"/C/AppServ/www/bitesize/assets/smooth-scroll.js",
+		"/C/AppServ/www/bitesize/test.html",
+		"/C/Users/Michael/AppData/Local/Temp/Temp1_smooth-scroll-master.zip/smooth-scroll-master/smooth-scroll.js",
+		"/C/AppServ/www/case/biofit/assets/misc.js",
+		"/C/AppServ/www/case/biofit/index.html",
+		"/C/Windows/System32/Drivers/etc/hosts",
+		"/C/Users/Michael/Applications/Android ADT Bundle/sdk/extras/google/google_play_services/samples/plus/src/com/google/android/gms/samples/plus/MomentUtil.java",
+		"/C/Users/Michael/Applications/Android ADT Bundle/sdk/extras/google/google_play_services/samples/plus/res/layout/sign_in_activity.xml",
+		"/C/AppServ/www/findme/assets/auth.js",
+		"/C/AppServ/www/findme/assets/save_code.php",
+		"/C/Users/Michael/Dropbox/Documents/100-103 NTUST/專題/Find Me/FindMe/AndroidManifest.xml",
+		"/C/Users/Michael/Dropbox/Documents/100-103 NTUST/專題/Find Me/Test/SharedPreference/src/me/iqwerty/test/sharedpreference/MainActivity.java",
+		"/C/AppServ/.htpasswd",
+		"/C/AppServ/www/findme/chatwithhoney.php",
+		"/C/AppServ/www/findme/index_oauth.php",
+		"/C/AppServ/www/findme/assets/google-api-php-client/examples/plus/index.php",
+		"/C/AppServ/www/findme/assets/oauth.js",
+		"/C/AppServ/www/school_reviews/login.php",
+		"/C/AppServ/www/school_reviews/json.php",
+		"/C/AppServ/www/findme/assets/google-api-php-client/examples/plus/simple.php",
+		"/C/AppServ/www/findme/assets/google-api-php-client/examples/plus/README",
+		"/C/AppServ/www/findme/assets/google-api-php-client/examples/userinfo/index.php",
+		"/C/AppServ/www/321/assets/float.js"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"login",
+			"ch",
+			"#name ",
+			"alternate",
+			"normal",
+			"alternate",
+			"ease-out",
+			"scroll",
+			"NONE",
+			"    ",
+			"     ",
+			"console.log",
+			"i",
+			"aux",
+			"main",
+			"session",
+			"chat",
+			"::-",
+			"scroll(",
+			"val",
+			"Child",
+			"child",
+			"sent",
+			"ch",
+			"POSTFIELDS",
+			"postfields",
+			"postFields",
+			"postfields",
+			"token",
+			"  ",
+			"initialize",
+			"theme"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "cip.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3476,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 96.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 98.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "ddns.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
