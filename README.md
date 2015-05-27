@@ -13,7 +13,7 @@ Then, create the `Cpanel` object
 
 	$cpanel = new Cpanel();
 
-Then, just set the cPanel URL, username, and password
+Then, just set the cPanel URL, username, and password. This is to login to your cPanel.
 
 	$cpanel->setUrl("https://yourhost.com:2083");
 	$cpanel->setUser("username");
@@ -23,9 +23,9 @@ By the way, method chaining is available, so `$cpanel->setUrl(...)->setUser(...)
 
 Finally, just update the ddns
 
-	$cpanel->updateDdns("yourdomain.com", "vnc.yourdomain.com");
+	$cpanel->updateDdns("vnc", "yourdomain.com");
 
-You should specify your domain, and the subdomain you want to use to connect back home (or wherever). Now you can use `vnc.yourdomain.com` to connect to your VNC server! Or whatever you want.
+You should specify your subdomain and the domain you want to use to connect back home (or wherever). Now you can use `vnc.yourdomain.com` to connect to your VNC server! Or whatever you want.
 
 ### Will this 100% work?
 I am not sure if this will work on *all* cPanels because of one small thing. There's a parameter in the jsonapi that specifies `line=xx`. I'm not sure if this affects anything, but if this library doesn't work for you, try to change the `line` to something else. This can be found in the `$param` variable in of the `updateDdns()` function.
