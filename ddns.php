@@ -19,6 +19,7 @@ class HttpRequest {
 	private $_url;
 	private $_params;
 	private $_headers;
+	private $_curlInfo;
 
 	function get() {
 		$url = $this->getUrl();
@@ -39,6 +40,8 @@ class HttpRequest {
 		curl_setopt($curl, CURLOPT_URL, $url . $params);
 
 		$result = curl_exec($curl);
+		$this->setCurlInfo(curl_getinfo($curl));
+
 		curl_close($curl);
 		return $result;
 	}
@@ -54,8 +57,12 @@ class HttpRequest {
 		curl_setopt($curl, CURLOPT_POST, 1);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $params);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+		curl_setopt($curl, CURLOPT_TIMEOUT, 100020);
 
 		$result = curl_exec($curl);
+		$this->setCurlInfo(curl_getinfo($curl));
+
 		curl_close($curl);
 		return $result;
 	}
@@ -83,6 +90,14 @@ class HttpRequest {
 		$this->_headers = $headers;
 		return $this;
 	}
+
+	function getCurlInfo() {
+		return $this->_curlInfo;
+	}
+	function setCurlInfo($curlInfo) {
+		$this->_curlInfo = $curlInfo;
+		return $this;
+	}
 }
 
 
@@ -102,7 +117,7 @@ class Cpanel {
 	 * @return                     Returns nothing
 	 */
 	public function updateDdns($domain, $subdomain) {
-		$this->login();
+		if(!$this->login()) return false;
 
 		$params = "address=" . $_SERVER['REMOTE_ADDR'];
 		$params .= "&class=IN";
@@ -127,8 +142,7 @@ class Cpanel {
 
 	/**
 	 * Login to your cpanel.
-	 * @return [Boolean] Currently returns the $result of the login.
-	 * TODO: return true if login was successful, otherwise false :D
+	 * @return [Boolean] True if the login succeeded
 	 */
 	private function login() {
 		$url = $this->getUrl();
@@ -136,31 +150,26 @@ class Cpanel {
 		$pass = $this->getPass();
 
 
-		$curl = curl_init();
-		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
-		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
-		curl_setopt($curl, CURLOPT_HEADER, 0);
-		curl_setopt($curl, CURLOPT_URL, $url);
-		curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
-		curl_setopt($curl, CURLOPT_POST, 1);
-		curl_setopt($curl, CURLOPT_POSTFIELDS, "user=" . $user . "&pass=" . $pass);
-		curl_setopt($curl, CURLOPT_TIMEOUT, 100020);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+		$params = "user=" . $user . "&pass=" . $pass;
 
-		$result = curl_exec($curl);
-		$inf = curl_getinfo($curl);
-		curl_close($curl);
-
+		$httpRequest = new HttpRequest();
+		$httpRequest
+			->setUrl($url . "/login")
+			->setParams($params);
+		$result = $httpRequest->post();
+		$inf = $httpRequest->getCurlInfo();
+		
 
 		//get the session
-		if($result == true && strpos($inf['url'], "cpsess")) {
+		if(strpos($inf['url'], "cpsess")) {
 			$pattern = "/.*?(\/cpsess.*?)\/.*?/is";
 			$preg_res = preg_match($pattern, $inf['url'], $cpsess);
 
 			$this->setToken($cpsess[1]);
+			return true;
 		}
 
-		return $result;
+		return false;
 	}
 
 	function getUrl() {
