@@ -44,7 +44,7 @@ $cpanel
 	->setUrl($ddns_cpanel_url)
 	->setUser($ddns_cpanel_user)
 	->setPass($ddns_cpanel_pass);
-$cpanel->updateDdns($ddns_ddns_domain, $ddns_ddns_subdomain); //wasn't that fun? :)
+$cpanel->updateDdns($ddns_ddns_subdomain, $ddns_ddns_domain); //wasn't that fun? :)
 
 
 

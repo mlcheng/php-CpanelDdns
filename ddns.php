@@ -112,11 +112,11 @@ class Cpanel {
 
 	/**
 	 * Update DDNS on your domain. This method requires a login, therefore be sure to provide the URL, username, and password before calling
-	 * @param  [String] $domain    Your website
-	 * @param  [String] $subdomain Your website's subdomain, used to connect to your VNC or whatever
+	 * @param  [String] $subdomain Your website's subdomain, used to connect to your VNC or whatever, e.g. "vnc"
+	 * @param  [String] $domain    Your website, e.g. "example.com"
 	 * @return                     Returns nothing
 	 */
-	public function updateDdns($domain, $subdomain) {
+	public function updateDdns($subdomain, $domain) {
 		if(!$this->login()) return false;
 
 		$params = "address=" . $_SERVER['REMOTE_ADDR'];
@@ -126,7 +126,7 @@ class Cpanel {
 		$params .= "&cpanel_jsonapi_version=2";
 		$params .= "&domain=" . $domain;
 		$params .= "&line=28";
-		$params .= "&name=" . $subdomain . ".";
+		$params .= "&name=" . $subdomain . "." . $domain . ".";
 		$params .= "&ttl=1200";
 		$params .= "&type=A";
 
