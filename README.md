@@ -7,23 +7,31 @@ PS: This requires you have cPanel :)
 ## Usage
 Usage is quite simple, but I'm not quite sure if it'll 100% work on every cPanel (explained later). All you need to do is
 
-	require("ddns.php");
+```php
+require("ddns.php");
+```
 
 Then, create the `Cpanel` object
 
-	$cpanel = new Cpanel();
+```php
+$cpanel = new Cpanel();
+```
 
 Then, just set the cPanel URL, username, and password. This is to login to your cPanel.
 
-	$cpanel->setUrl("https://yourhost.com:2083");
-	$cpanel->setUser("username");
-	$cpanel->setPass("password123");
+```php
+$cpanel->setUrl("https://yourhost.com:2083");
+$cpanel->setUser("username");
+$cpanel->setPass("password123");
+```
 
 By the way, method chaining is available, so `$cpanel->setUrl(...)->setUser(...)->setPass(...)` can be done if you so desire.
 
 Finally, just update the ddns
 
-	$cpanel->updateDdns("vnc", "yourdomain.com");
+```php
+$cpanel->updateDdns("vnc", "yourdomain.com");
+```
 
 You should specify your subdomain and the domain you want to use to connect back home (or wherever). Now you can use `vnc.yourdomain.com` to connect to your VNC server! Or whatever you want.
 
