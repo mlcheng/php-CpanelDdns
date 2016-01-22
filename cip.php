@@ -33,7 +33,7 @@
  * You can also just set these variables inline (below).
  */
 require("credentials.php");
-require("ddns.php");
+require("CpanelDDNS.php");
 
 
 

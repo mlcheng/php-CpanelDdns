@@ -1,7 +1,7 @@
 <?php
 /***********************************************
 
-  "ddns.php"
+  "CpanelDDNS.php"
 
   Created by Michael Cheng on 04/16/2014 14:40
             http://michaelcheng.us/
@@ -10,96 +10,7 @@
 
 ***********************************************/
 
-/**
- * An HTTP Request object.
- *
- * GET or POST requests can be sent using ->get() or ->post()
- */
-class HttpRequest {
-	private $_url;
-	private $_params;
-	private $_headers;
-	private $_curlInfo;
-
-	function get() {
-		$url = $this->getUrl();
-		$params = $this->getParams();
-		$headers = $this->getHeaders();
-
-		$curl = curl_init();
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-		curl_setopt($curl, CURLOPT_HTTPGET, true);
-		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-		curl_setopt($curl, CURLOPT_HEADER, 0);
-		
-		$header[0] = $headers;
-
-		curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
-		curl_setopt($curl, CURLOPT_URL, $url . $params);
-
-		$result = curl_exec($curl);
-		$this->setCurlInfo(curl_getinfo($curl));
-
-		curl_close($curl);
-		return $result;
-	}
-
-	function post() {
-		$url = $this->getUrl();
-		$params = $this->getParams();
-
-		$curl = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $url);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-		curl_setopt($curl, CURLOPT_POST, 1);
-		curl_setopt($curl, CURLOPT_POSTFIELDS, $params);
-		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
-		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-		curl_setopt($curl, CURLOPT_TIMEOUT, 100020);
-
-		$result = curl_exec($curl);
-		$this->setCurlInfo(curl_getinfo($curl));
-
-		curl_close($curl);
-		return $result;
-	}
-
-	function getUrl() {
-		return $this->_url;
-	}
-	function setUrl($url) {
-		$this->_url = $url;
-		return $this;
-	}
-
-	function getParams() {
-		return $this->_params;
-	}
-	function setParams($params) {
-		$this->_params = $params;
-		return $this;
-	}
-
-	function getHeaders() {
-		return $this->_headers;
-	}
-	function setHeaders($headers) {
-		$this->_headers = $headers;
-		return $this;
-	}
-
-	function getCurlInfo() {
-		return $this->_curlInfo;
-	}
-	function setCurlInfo($curlInfo) {
-		$this->_curlInfo = $curlInfo;
-		return $this;
-	}
-}
-
+require('lib/HttpRequest.php');
 
 /**
  * Cpanel object. For now, the only public facing method is to update the DDNS
