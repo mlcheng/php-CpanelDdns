@@ -1,4 +1,4 @@
-# php-CpanelDDNS
+# php-CpanelDdns
 
 This is a small PHP library that can help you manage your own custom ddns. I used to rely on something like dyndns.org to connect back to my home computer, but that service became paid a few years ago. Not wanting to rely on another "free" service for this, I created cpanel_ddns.
 
@@ -8,13 +8,13 @@ PS: This requires you have cPanel :)
 Usage is quite simple, but I'm not quite sure if it'll 100% work on every cPanel (explained later). All you need to do is
 
 ```php
-require("CpanelDDNS.php");
+require("CpanelDdns.php");
 ```
 
-Then, create the `Cpanel` object
+Then, create the `CpanelDdns` object
 
 ```php
-$cpanel = new Cpanel();
+$cpanel = new CpanelDdns();
 ```
 
 Then, just set the cPanel URL, username, and password. This is to login to your cPanel.
