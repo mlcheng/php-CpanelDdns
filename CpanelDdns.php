@@ -1,7 +1,7 @@
 <?php
 /***********************************************
 
-  "CpanelDDNS.php"
+  "CpanelDdns.php"
 
   Created by Michael Cheng on 04/16/2014 14:40
             http://michaelcheng.us/
@@ -15,7 +15,7 @@ require('lib/HttpRequest.php');
 /**
  * Cpanel object. For now, the only public facing method is to update the DDNS
  */
-class Cpanel {
+class CpanelDdns {
 	private $_url;
 	private $_user;
 	private $_pass;
@@ -30,24 +30,21 @@ class Cpanel {
 	public function updateDdns($subdomain, $domain) {
 		if(!$this->login()) return false;
 
-		$params = "address=" . $_SERVER['REMOTE_ADDR'];
-		$params .= "&class=IN";
-		$params .= "&cpanel_jsonapi_func=edit_zone_record";
-		$params .= "&cpanel_jsonapi_module=ZoneEdit";
-		$params .= "&cpanel_jsonapi_version=2";
-		$params .= "&domain=" . $domain;
-		$params .= "&line=28";
-		$params .= "&name=" . $subdomain . "." . $domain . ".";
-		$params .= "&ttl=1200";
-		$params .= "&type=A";
-
-
-		$httpRequest = new HttpRequest();
-		$httpRequest
-			->setUrl($this->getUrl() . $this->getToken() . "/json-api/cpanel?")
-			->setParams($params)
-			->setHeaders("Authorization: Basic " . base64_encode($this->getUser() . ":" . $this->getPass()) . "\n\r");
-		$httpRequest->get();
+		$http = new HttpRequest($this->getUrl() . $this->getToken() . "/json-api/cpanel?");
+		$http
+			->setHeaders("Authorization: Basic " . base64_encode($this->getUser() . ":" . $this->getPass()) . "\n\r")
+			->post(array(
+				"address" => $_SERVER['REMOTE_ADDR'],
+				"class" => "IN",
+				"cpanel_jsonapi_func" => "edit_zone_record",
+				"cpanel_jsonapi_module" => "ZoneEdit",
+				"cpanel_jsonapi_version" => 2,
+				"domain" => $domain,
+				"line" => 28,
+				"name" => $subdomain . "." . $domain . ".",
+				"ttl" => 1200,
+				"type" => "A"
+			));
 	}
 
 
@@ -63,12 +60,12 @@ class Cpanel {
 
 		$params = "user=" . $user . "&pass=" . $pass;
 
-		$httpRequest = new HttpRequest();
-		$httpRequest
-			->setUrl($url . "/login")
-			->setParams($params);
-		$result = $httpRequest->post();
-		$inf = $httpRequest->getCurlInfo();
+		$http = new HttpRequest($url . "/login");
+		$result = $http->post(array(
+			"user" => $user,
+			"pass" => $pass
+		));
+		$inf = $http->getCurlInfo();
 		
 
 		//get the session
