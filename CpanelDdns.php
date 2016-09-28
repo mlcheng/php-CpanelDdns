@@ -33,7 +33,7 @@ class CpanelDdns {
 		$http = new HttpRequest($this->getUrl() . $this->getToken() . "/json-api/cpanel?");
 		$http
 			->setHeaders("Authorization: Basic " . base64_encode($this->getUser() . ":" . $this->getPass()) . "\n\r")
-			->post(array(
+			->get(array(
 				"address" => $_SERVER['REMOTE_ADDR'],
 				"class" => "IN",
 				"cpanel_jsonapi_func" => "edit_zone_record",
@@ -68,7 +68,7 @@ class CpanelDdns {
 		$inf = $http->getCurlInfo();
 		
 
-		//get the session
+		// Get the session
 		if(strpos($inf['url'], "cpsess")) {
 			$pattern = "/.*?(\/cpsess.*?)\/.*?/is";
 			$preg_res = preg_match($pattern, $inf['url'], $cpsess);

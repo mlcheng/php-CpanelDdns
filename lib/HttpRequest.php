@@ -60,8 +60,8 @@ class HttpRequest {
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
 		curl_setopt($curl, CURLOPT_POST, 1);
-		curl_setopt($curl, CURLOPT_POSTFIELDS, $params);
-		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, substr($params, 1)); // Remove the '?'
+		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
 		curl_setopt($curl, CURLOPT_TIMEOUT, 100020);
 
@@ -78,7 +78,7 @@ class HttpRequest {
 			$out .= urlencode($key) . "=" . urlencode($value) . "&";
 		}
 
-		// remove the last "&"
+		// Remove the last "&"
 		$out = substr($out, 0, strlen($out)-1);
 
 		return $out;
