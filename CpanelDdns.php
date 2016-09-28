@@ -30,7 +30,7 @@ class CpanelDdns {
 	public function updateDdns($subdomain, $domain) {
 		if(!$this->login()) return false;
 
-		$http = new HttpRequest($this->getUrl() . $this->getToken() . "/json-api/cpanel?");
+		$http = new HttpRequest($this->getUrl() . $this->getToken() . "/json-api/cpanel");
 		$http
 			->setHeaders("Authorization: Basic " . base64_encode($this->getUser() . ":" . $this->getPass()) . "\n\r")
 			->get(array(
