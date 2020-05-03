@@ -20,27 +20,27 @@ class CpanelDdns {
 	private $_user;
 	private $_pass;
 	private $_token;
+	private $_cookieFile;
 
 	/**
 	 * Update DDNS on your domain. This method requires a login, therefore be sure to provide the URL, username, and password before calling
 	 * @param  [String] $subdomain Your website's subdomain, used to connect to your VNC or whatever, e.g. "vnc"
 	 * @param  [String] $domain    Your website, e.g. "example.com"
-	 * @return                     Returns nothing
+	 * @return                     Returns the result of the POST.
 	 */
 	public function updateDdns($subdomain, $domain) {
 		if(!$this->login()) return false;
 
-		$http = new HttpRequest($this->getUrl() . $this->getToken() . "/json-api/cpanel");
-		$http
-			->setHeaders("Authorization: Basic " . base64_encode($this->getUser() . ":" . $this->getPass()) . "\n\r")
-			->get(array(
+		$http = new HttpRequest($this->getUrl() . $this->getToken() . "/json-api/cpanel", $this->_cookieFile);
+		return $http
+			->post(array(
 				"address" => $_SERVER['REMOTE_ADDR'],
 				"class" => "IN",
 				"cpanel_jsonapi_func" => "edit_zone_record",
 				"cpanel_jsonapi_module" => "ZoneEdit",
 				"cpanel_jsonapi_version" => 2,
 				"domain" => $domain,
-				"line" => 28,
+				"line" => 36,
 				"name" => $subdomain . "." . $domain . ".",
 				"ttl" => 1200,
 				"type" => "A"
@@ -61,12 +61,13 @@ class CpanelDdns {
 		$params = "user=" . $user . "&pass=" . $pass;
 
 		$http = new HttpRequest($url . "/login");
+		$this->_cookieFile = $http->getCookieFile();
 		$result = $http->post(array(
 			"user" => $user,
 			"pass" => $pass
 		));
 		$inf = $http->getCurlInfo();
-		
+
 
 		// Get the session
 		if(strpos($inf['url'], "cpsess")) {
