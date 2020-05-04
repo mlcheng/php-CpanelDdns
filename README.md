@@ -2,7 +2,7 @@
 
 This is a small PHP library that can help you manage your own custom DDNS. I used to rely on [dyndns.org](http://dyndns.org) to connect back to my home computer, but that service became paid a few years ago. Not wanting to rely on another "free" service for this, I created the `CpanelDdns` PHP library.
 
-PS: This requires that you have cPanel :)
+PS: This requires that you have cPanel :) Also, you'll need some low-powered device that can run this script on a schedule. I use an old Android phone and [MacroDroid](https://play.google.com/store/apps/details?id=com.arlosoft.macrodroid).
 
 ## Usage
 Usage is quite simple, but I'm not quite sure if it'll 100% work on every cPanel (explained later). All you need to do is

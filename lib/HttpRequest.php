@@ -22,7 +22,6 @@ class HttpRequest {
 	private $_curlInfo;
 	private $_cookieFile;
 
-
 	function __construct($url, $cookieFile = '') {
 		$this->_url = $url;
 
@@ -36,6 +35,7 @@ class HttpRequest {
 		$url = $this->getUrl();
 		$params = $this->processParams($params);
 		$headers = $this->getHeaders();
+		$header[0] = $headers;
 
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -44,9 +44,6 @@ class HttpRequest {
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
 		curl_setopt($curl, CURLOPT_HEADER, 0);
-
-		$header[0] = $headers;
-
 		curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
 		curl_setopt($curl, CURLOPT_URL, $url . $params);
 
@@ -76,7 +73,6 @@ class HttpRequest {
 		curl_setopt($curl, CURLOPT_COOKIEFILE, $cookieFile);
 		curl_setopt($curl, CURLOPT_COOKIEJAR, $cookieFile);
 
-
 		$result = curl_exec($curl);
 		$this->setCurlInfo(curl_getinfo($curl));
 
@@ -103,6 +99,7 @@ class HttpRequest {
 	private function getHeaders() {
 		return $this->_headers;
 	}
+
 	public function setHeaders($headers) {
 		$this->_headers = $headers;
 		return $this;
@@ -111,6 +108,7 @@ class HttpRequest {
 	public function getCurlInfo() {
 		return $this->_curlInfo;
 	}
+
 	private function setCurlInfo($curlInfo) {
 		$this->_curlInfo = $curlInfo;
 		return $this;

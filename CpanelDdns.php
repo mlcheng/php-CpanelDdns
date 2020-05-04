@@ -24,9 +24,9 @@ class CpanelDdns {
 
 	/**
 	 * Update DDNS on your domain. This method requires a login, therefore be sure to provide the URL, username, and password before calling
-	 * @param  [String] $subdomain Your website's subdomain, used to connect to your VNC or whatever, e.g. "vnc"
-	 * @param  [String] $domain    Your website, e.g. "example.com"
-	 * @return                     Returns the result of the POST.
+	 * @param [String] $subdomain Your website's subdomain, used to connect to your VNC or whatever, e.g. "vnc"
+	 * @param [String] $domain Your website, e.g. "example.com"
+	 * @return Returns the result of the POST.
 	 */
 	public function updateDdns($subdomain, $domain) {
 		if(!$this->login()) return false;
@@ -47,7 +47,6 @@ class CpanelDdns {
 			));
 	}
 
-
 	/**
 	 * Login to your cpanel.
 	 * @return [Boolean] True if the login succeeded
@@ -56,7 +55,6 @@ class CpanelDdns {
 		$url = $this->getUrl();
 		$user = $this->getUser();
 		$pass = $this->getPass();
-
 
 		$params = "user=" . $user . "&pass=" . $pass;
 
@@ -67,7 +65,6 @@ class CpanelDdns {
 			"pass" => $pass
 		));
 		$inf = $http->getCurlInfo();
-
 
 		// Get the session
 		if(strpos($inf['url'], "cpsess")) {
@@ -84,6 +81,7 @@ class CpanelDdns {
 	function getUrl() {
 		return $this->_url;
 	}
+
 	function setUrl($url) {
 		$this->_url = $url;
 		return $this;
@@ -92,6 +90,7 @@ class CpanelDdns {
 	function getUser() {
 		return $this->_user;
 	}
+
 	function setUser($user) {
 		$this->_user = $user;
 		return $this;
@@ -100,6 +99,7 @@ class CpanelDdns {
 	function getPass() {
 		return $this->_pass;
 	}
+
 	function setPass($pass) {
 		$this->_pass = $pass;
 		return $this;
@@ -108,11 +108,10 @@ class CpanelDdns {
 	function getToken() {
 		return $this->_token;
 	}
+
 	function setToken($token) {
 		$this->_token = $token;
 		return $this;
 	}
-
 }
-
 ?>
