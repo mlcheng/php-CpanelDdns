@@ -31,7 +31,7 @@ class HttpRequest {
 		$this->_cookieFile = $cookieFile;
 	}
 
-	function get($params) {
+	function get($params = []) {
 		$url = $this->getUrl();
 		$params = $this->processParams($params);
 		$headers = $this->getHeaders();
@@ -54,7 +54,7 @@ class HttpRequest {
 		return $result;
 	}
 
-	function post($params) {
+	function post($params = []) {
 		$url = $this->getUrl();
 		$params = $this->processParams($params);
 		$cookieFile = $this->_cookieFile;
@@ -82,7 +82,7 @@ class HttpRequest {
 
 	private function processParams($params) {
 		$out = "?";
-		foreach($params as $key=>$value) {
+		foreach($params as $key => $value) {
 			$out .= urlencode($key) . "=" . urlencode($value) . "&";
 		}
 

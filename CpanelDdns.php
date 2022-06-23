@@ -40,7 +40,7 @@ class CpanelDdns {
 				"cpanel_jsonapi_module" => "ZoneEdit",
 				"cpanel_jsonapi_version" => 2,
 				"domain" => $domain,
-				"line" => 36,
+				"line" => 29,
 				"name" => $subdomain . "." . $domain . ".",
 				"ttl" => 1200,
 				"type" => "A"
