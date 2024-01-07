@@ -28,7 +28,7 @@ class CpanelDdns {
 	 * @param [String] $domain Your website, e.g. "example.com"
 	 * @return Returns the result of the POST.
 	 */
-	public function updateDdns($subdomain, $domain) {
+	public function updateDdns($subdomain, $domain, $lineNumber) {
 		if(!$this->login()) return false;
 
 		$http = new HttpRequest($this->getUrl() . $this->getToken() . "/json-api/cpanel", $this->_cookieFile);
@@ -40,7 +40,7 @@ class CpanelDdns {
 				"cpanel_jsonapi_module" => "ZoneEdit",
 				"cpanel_jsonapi_version" => 2,
 				"domain" => $domain,
-				"line" => 29,
+				"line" => $lineNumber,
 				"name" => $subdomain . "." . $domain . ".",
 				"ttl" => 1200,
 				"type" => "A"
